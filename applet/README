@@ -1,8 +1,9 @@
 Titre       : DayTime
-Version     : 0.1
+Version     : 0.1.1
 Description : Une applet representant une horloge analogique
 Auteur      : Philippe BOUSQUET
 Creation    : 15/03/2002
+Modification: 24/03/2002
 License     : GNU GENERAL PUBLIC LICENSE
 Copyright   : (c) 2002 - Philippe BOUSQUET
 _________________________________________________________________
@@ -11,8 +12,8 @@ PRESENTATION
 ============
 	Cette applet affiche une horloges analogique sur votre page html. 
 
-INSTALLATION
-============
+PARAMETRAGE
+===========
 	L'applet prends plusieurs paramètres:
 			
 	  - bgcolor : Couleur de fond, la valeur par défaut est "#FFFFFF" (blanc).
@@ -32,7 +33,11 @@ INSTALLATION
           <param name=rayon value="100"> 
         </applet>
 
-
+NOUVEAUTES
+==========
+        - v0.1.1 : Mise en place du double buffering
+        - v0.1   : Première version de DayTime
+        
 GARANTIES
 =========
 	ATTENTION: Je ne prend aucune responsabilité sur les dégats

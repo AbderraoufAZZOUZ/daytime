@@ -40,6 +40,9 @@ public class DayTime extends java.applet.Applet implements Runnable
         String date;
         int margex;
         int margey;
+        // double buffering
+        private Graphics off;
+        private Image offImg;
 
         /** Démarrage de l'applet */
         public void start()
@@ -54,6 +57,10 @@ public class DayTime extends java.applet.Applet implements Runnable
         /** Initialisation de l'applet */
         public void init()
         {
+            // image for double bffering
+            offImg = createImage(size().width,size().height);
+            // create a Graphics object from the image
+            off = offImg.getGraphics();
             // Valeurs par défaut     
             fontSize = 9;
             backColor = Color.white;
@@ -84,6 +91,18 @@ public class DayTime extends java.applet.Applet implements Runnable
         /** Execution de l'applet */
         public void run()
         {
+                Graphics g = getGraphics();
+                while (runner != null)
+                {
+                        paint(off);
+                        affiche_applet(g);
+			try {Thread.currentThread().sleep(10); }
+			catch (InterruptedException e) {}
+                }
+        }
+
+/*        public void run()
+        {
 		Thread me = Thread.currentThread();
 		while (runner == me) 
 		{
@@ -92,7 +111,7 @@ public class DayTime extends java.applet.Applet implements Runnable
 			catch (InterruptedException e) {}
 		}
         }
-        
+*/        
         /** Arret de l'applet */
         public void stop()
         {
@@ -152,6 +171,8 @@ public class DayTime extends java.applet.Applet implements Runnable
             margex=(int) ((d.width - (rayon * 2))/2);
             margey=(int) ((d.height - (rayon * 2))/2);            
             setSize(d);
+            off.setColor(backColor);
+            off.fillRect(0,0,size().width,size().height);
             Date dateCourante;
             dateCourante = new Date();
             date =(new SimpleDateFormat("dd/MM",Locale.getDefault())).format(dateCourante);
@@ -186,12 +207,17 @@ public class DayTime extends java.applet.Applet implements Runnable
             sy = (int) (Math.sin((s * 3.14 / 30)-3.14/2)*(rayon*9/10)+rayon+margey);
             affiche_aiguille(rayon,sx,sy,fontColor,g);
         }
+        
+        public void affiche_applet(Graphics g)
+        {
+            g.drawImage(offImg, 0, 0, this);
+        }
 
         /** Informations sur l'Applet */
 	public String getAppletInfo() 
 	{
 		String retour;
-		retour="Titre: DayTime\nVersion: 0.1\n"+
+		retour="Titre: DayTime\nVersion: 0.1.1\n"+
 		"Description: Affiche la date et l'heure\n"+
 		"Auteur: Philippe BOUSQUET\n"+
 		"Copyright (c) 2002 - Philippe BOUSQUET\n"+
