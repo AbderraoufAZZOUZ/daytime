@@ -1,0 +1,58 @@
+Titre       : DayTime
+Version     : 0.1
+Description : Une applet representant une horloge analogique
+Auteur      : Philippe BOUSQUET
+Creation    : 15/03/2002
+License     : GNU GENERAL PUBLIC LICENSE
+Copyright   : (c) 2002 - Philippe BOUSQUET
+_________________________________________________________________
+
+PRESENTATION
+============
+	Cette applet affiche une horloges analogique sur votre page html. 
+
+INSTALLATION
+============
+	L'applet prends plusieurs paramètres:
+			
+	  - bgcolor : Couleur de fond, la valeur par défaut est "#FFFFFF" (blanc).
+ 	  - rayon   : Rayon de l'horloge, la valeur par défaut est "60".
+ 	  - agcolor : Couleur des aiguilles de l'horloge, la valeur par défaut est "#0000FF" (bleu).
+ 	  - hlcolor : Couleur du bord de l'horloge, la valeur par défaut est "#FF0000" (rouge).
+          - size    : Taille de la police de caractères, la valeur par défaut est "9".
+ 	  - ftcolor : Couleur de la police de caractères, la valeur par défaut est "#000000" (noir).
+
+	Exemple:
+        <applet code="DayTime.class" width="210" height="210">
+          <param name=size value="14"> 
+          <param name=bgcolor value="#FFFFFF"> 
+          <param name=agcolor value="#0000FF"> 
+          <param name=hlcolor value="#FF00FF"> 
+          <param name=ftcolor value="#000000"> 
+          <param name=rayon value="100"> 
+        </applet>
+
+
+GARANTIES
+=========
+	ATTENTION: Je ne prend aucune responsabilité sur les dégats
+	encourus lors de l'utilisation cette applet.
+
+LICENSE
+=======
+	Ce logiciel est sous license GPL, Pour plus d'informations
+	consulter la note LICENSE.
+
+AUTRES PROJETS
+==============
+	DayTime n'est pas mon seul projet, pour en savoir plus
+	veuillez consulter le site http://darken.tuxfamily.org.
+_________________________________________________________________
+
+Philippe BOUSQUET
+229 rue Sainte Catherine,
+33000 BORDEAUX
+FRANCE.
+Tel: (+33) 06.61.99.25.84
+E-mail : Darken@tuxfamily.org
+Site: http://darken.tuxfamily.org
